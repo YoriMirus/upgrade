@@ -43,32 +43,6 @@ checksum = "8b26702f315f53b6071259e15dd9d64528213b44d61de1ec926eca7715d62203"
 
 [[package]]
 name = "apt-cmd"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "730d9701389268390cc7f3cd14b911c4934186f633150ad11aaee3fc03f6ec4b"
-dependencies = [
- "anyhow",
- "as-result",
- "async-barrier",
- "async-fs",
- "async-io",
- "async-process",
- "async-stream",
- "async-task",
- "derive_more",
- "flume",
- "futures",
- "futures-util",
- "hex",
- "isahc",
- "md-5 0.9.1",
- "procfs 0.11.1",
- "smolscale",
- "thiserror",
-]
-
-[[package]]
-name = "apt-cmd"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "45d8bcd216b71e5e71b82d7eeffca84b8d0fcbfdcfe751caf04c6dc30738ade5"
@@ -87,8 +61,8 @@ dependencies = [
  "futures-util",
  "hex",
  "isahc",
- "md-5 0.10.0",
- "procfs 0.12.0",
+ "md-5",
+ "procfs",
  "smolscale",
  "thiserror",
 ]
@@ -1771,17 +1745,6 @@ checksum = "a3e378b66a060d48947b590737b30a1be76706c8dd7b8ba0f2fe3989c68a853f"
 
 [[package]]
 name = "md-5"
-version = "0.9.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7b5a279bb9607f9f53c22d496eade00d138d1bdcccd07d74650387cf94942a15"
-dependencies = [
- "block-buffer 0.9.0",
- "digest 0.9.0",
- "opaque-debug",
-]
-
-[[package]]
-name = "md-5"
 version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e6a38fc55c8bbc10058782919516f88826e70320db6d206aebc49611d24216ae"
@@ -1976,9 +1939,9 @@ dependencies = [
 
 [[package]]
 name = "os_str_bytes"
-version = "4.2.0"
+version = "6.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "addaa943333a514159c80c97ff4a93306530d965d27e139188283cd13e06a799"
+checksum = "8e22443d1643a904602595ba1cd8f7d896afe56d26712531c5ff73a15b2fbf64"
 dependencies = [
  "memchr",
 ]
@@ -2125,7 +2088,7 @@ name = "pop-upgrade"
 version = "1.0.0"
 dependencies = [
  "anyhow",
- "apt-cmd 0.1.2",
+ "apt-cmd",
  "as-result",
  "async-fs",
  "async-io",
@@ -2139,7 +2102,7 @@ dependencies = [
  "clap",
  "dbus 0.9.5",
  "dbus-crossroads",
- "digest 0.9.0",
+ "digest 0.10.1",
  "enclose",
  "envfile",
  "exec",
@@ -2154,21 +2117,21 @@ dependencies = [
  "libc",
  "log",
  "logind-dbus",
- "md-5 0.9.1",
+ "md-5",
  "notify-rust",
  "num-derive",
  "num-traits",
  "os-release",
  "os_str_bytes",
  "proc-mounts",
- "procfs 0.10.1",
+ "procfs",
  "pwd",
  "rand",
  "regex",
  "serde",
  "serde_derive",
  "serde_json",
- "sha2",
+ "sha2 0.10.0",
  "shrinkwraprs",
  "smolscale",
  "sys-mount",
@@ -2189,7 +2152,7 @@ dependencies = [
 name = "pop-upgrade-gtk"
 version = "1.0.0"
 dependencies = [
- "apt-cmd 0.2.1",
+ "apt-cmd",
  "better-panic",
  "cascade 1.0.0",
  "chrono",
@@ -2291,36 +2254,6 @@ checksum = "2ad7e9c8d1b8c20f16a84d61d7c4c0325a5837c1307a2491b509cd92fb4e4442"
 dependencies = [
  "lazy_static",
  "partition-identity",
-]
-
-[[package]]
-name = "procfs"
-version = "0.10.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "95e344cafeaeefe487300c361654bcfc85db3ac53619eeccced29f5ea18c4c70"
-dependencies = [
- "bitflags",
- "byteorder",
- "chrono",
- "flate2",
- "hex",
- "lazy_static",
- "libc",
-]
-
-[[package]]
-name = "procfs"
-version = "0.11.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7718b88dae7b9b9be183ee274b10554b9aded035539230245275d7bc543fc0a4"
-dependencies = [
- "bitflags",
- "byteorder",
- "chrono",
- "flate2",
- "hex",
- "lazy_static",
- "libc",
 ]
 
 [[package]]
@@ -2500,7 +2433,7 @@ version = "7.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ad22c7226e4829104deab21df575e995bfbc4adfad13a595e387477f238c1aec"
 dependencies = [
- "sha2",
+ "sha2 0.9.8",
  "walkdir",
 ]
 
@@ -2643,6 +2576,17 @@ dependencies = [
  "cpufeatures",
  "digest 0.9.0",
  "opaque-debug",
+]
+
+[[package]]
+name = "sha2"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "900d964dd36bb15bcf2f2b35694c072feab74969a54f2bbeec7a2d725d2bdcb6"
+dependencies = [
+ "cfg-if",
+ "cpufeatures",
+ "digest 0.10.1",
 ]
 
 [[package]]
