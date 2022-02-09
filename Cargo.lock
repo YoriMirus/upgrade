@@ -44,7 +44,7 @@ checksum = "94a45b455c14666b85fc40a019e8ab9eb75e3a124e05494f5397122bc9eb06e0"
 [[package]]
 name = "apt-cmd"
 version = "0.4.0"
-source = "git+https://github.com/pop-os/apt-cmd/#7679ae93a8ab3d76ad4b13aeebe1d54554d5f474"
+source = "git+https://github.com/pop-os/apt-cmd/#e4484b30693337e24a293468e2eee7dac837f7cf"
 dependencies = [
  "anyhow",
  "as-result",
@@ -94,8 +94,8 @@ dependencies = [
 
 [[package]]
 name = "async-fetcher"
-version = "0.7.1"
-source = "git+https://github.com/pop-os/async-fetcher#307fffb80f589b87a1f9d7b6a73d1ee3c50a2813"
+version = "0.7.2"
+source = "git+https://github.com/pop-os/async-fetcher#c171cbe875d5791acfd24d7ec83ef6bb1384ee6b"
 dependencies = [
  "derive-new",
  "derive_more",
@@ -116,6 +116,7 @@ dependencies = [
  "sha2 0.10.1",
  "thiserror",
  "tokio",
+ "tokio-stream",
 ]
 
 [[package]]
